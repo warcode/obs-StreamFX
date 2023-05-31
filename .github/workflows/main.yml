@@ -170,3 +170,9 @@ jobs:
         CMAKE_BUILD_TYPE: "RelWithDebInfo"
       run: |
         cmake --build "build/ci" --config ${{ env.CMAKE_BUILD_TYPE }} --target StreamFX
+    - name: 'Upload Artifact'
+      uses: actions/upload-artifact@v3
+      with:
+        name: streamfx-artifacts
+        path: D:\a\obs-StreamFX\obs-StreamFX\build\ci\RelWithDebInfo\
+        retention-days: 5
